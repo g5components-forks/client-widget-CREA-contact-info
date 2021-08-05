@@ -1,0 +1,24 @@
+{
+  "name": "cms-widget-contact-info-header-od",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npm explore cms-cli -- npm run serve -- --env.outputPath=$(pwd) --env.widgetPath=$(pwd)",
+    "build": "npm explore cms-cli -- npm run build -- --env.outputPath=$(pwd) --env.widgetPath=$(pwd)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iBryan6/cms-widget-contact-info-header-OD.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/iBryan6/cms-widget-contact-info-header-OD/issues"
+  },
+  "homepage": "https://github.com/iBryan6/cms-widget-contact-info-header-OD#readme",
+  "devDependencies": {
+    "cms-cli": "github:g5search/cms-cli#v1.2.5"
+  }
+}
