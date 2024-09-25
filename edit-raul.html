@@ -1,0 +1,121 @@
+<form>
+
+    {{ widget | start_tab_raul: '', 'General Settings', true }}
+  
+      <fieldset>
+  
+        <legend>Contact Data Section</legend>
+  
+        {{ widget.location_name | edit_text_field_raul: 'Location Name', 'location_name', 'best_value', 'half-width', true }}
+  
+        {{ widget.location_street_address | edit_text_field_raul: 'Street Address', 'location_street_address', 'best_value', 'half-width', true }}
+  
+        {{ widget.location_city | edit_text_field_raul: 'City', 'location_city', 'best_value', 'half-width', true }}
+  
+        {{ widget.location_state | edit_text_field_raul: 'State', 'location_state', 'best_value', 'half-width', true }}
+  
+        {{ widget.location_postal_code | edit_text_field_raul: 'Postal Code', 'location_postal_code', 'best_value', 'half-width', true }}
+  
+        {{ widget.location_country | edit_text_field_raul: 'Country', 'location_country', 'best_value', 'half-width', true }}
+  
+        {{ widget.location_tel | edit_tel_field_raul: 'Phone', 'location_phone_number', 'best_value', 'half-width', true }}
+  
+        {{ widget.fax_number | edit_text_field_raul: 'Fax Number', 'location_fax', 'value', 'half-width', true }}
+  
+        {{ widget.location_email_text | edit_text_field_raul: 'Email Link Text', 'Email Us', 'value_or_default', 'half-width' }}
+  
+        {{ widget.location_email | edit_text_field_raul: 'Email/Leads URL', 'location_email', 'best_value', 'half-width' }}
+  
+        {{ widget.maps_url | edit_url_field_raul: 'Map & Directions URL', '', 'best_value' }}
+  
+        {{ widget.maps_new_tab | edit_toggle_field_raul: 'Open Map in a New Window', 'value_or_default', 'associate-above' }}
+  
+        {{ widget.location_chat_url | edit_url_field_raul: 'Chat URL', '', 'best_value' }}
+  
+        {{ widget.display_social_links | edit_toggle_field_raul: 'Display Social Links', 'value_or_default' }}      
+  
+      </fieldset>
+  
+    {{ widget | end_tab_raul }}
+  
+  
+    {{ widget | start_tab_raul: '', 'Advanced Settings' }}
+  
+      <fieldset>
+  
+        <legend>Client/Location URNs</legend>
+
+        {{ widget.client_urn | edit_text_field_raul: 'Client URN', 'client_urn', 'best_value', 'full-width', true }}
+
+        {{ widget.location_urn | edit_text_field_raul: 'Location URN', 'location_urn', 'best_value', 'full-width', true }}
+        
+  
+      </fieldset>
+
+      <fieldset>
+  
+        <legend>Banner Style Layout</legend>
+        
+        {{ widget.location_name | edit_toggle_field_raul: 'Display Location Name', 'value_or_default', 'half-width' }}
+
+        {{ widget.move_social | edit_toggle_field_raul: 'Place Social Icons as First Element', 'value_or_default', 'half-width' }}
+
+        {{ widget.move_phone | edit_toggle_field_raul: 'Place Phone as Last Element', 'value_or_default', 'half-width' }}
+
+        {{ widget.insert_after_element | edit_toggle_field_raul: 'Insert Contact Info after target element', 'value_or_default', 'half-width' }}
+
+        {{ widget.insert_before_element | edit_toggle_field_raul: 'Insert Contact Info before target element', 'value_or_default', 'half-width' }}
+
+        {{ widget.target_element | edit_text_field_raul: "Target Element to insert Contact Info before or after" }}
+
+        {{ widget.container_width | edit_text_field_raul: "Contact Container Width", "960px or 100% etc", "value"}}
+
+        {{ widget.container_padding_lr | edit_text_field_raul: "Contact Container Padding Left / Right", "20px, or 1.5em etc", "value"}}
+
+        {% assign banner_opts = '{"no-banner":"Standard Style", "full-width-banner":"Full Width Banner"}' %}
+        {{ widget.full_width_banner_style | edit_radio_field_raul: "Banner Layout Options", banner_opts, "value_or_default" }}
+
+        {% assign horizontal_align_opts = '{"flex-start":"Left Align", "center":"Middle Align", "flex-end":"Right Align"}' %}
+        {{ widget.horizontal_align | edit_radio_field_raul: "Horizontal Align Options", horizontal_align_opts, "value_or_default" }}
+
+        {{ widget.element_padding | edit_text_field_raul: "Padding Between Elements (applied to left and right)", "XXpx, XXem", "value"}}
+
+        {{ widget.social_element_padding | edit_text_field_raul: "Padding Between Social Icon Elements (applied to left and right)", "XXpx, XXem", "value"}}
+
+        {{ widget.vertical_divider | edit_toggle_field_raul: "Vertical Divider Between Elements" }}
+
+        {{ widget.responsive_width | edit_text_field_raul: "Responsive Width (px, %, or em)", "value_or_default"}}
+  
+ 
+      </fieldset>
+      
+      <fieldset>
+  
+        <legend>General Styles section</legend>
+  
+        <p>
+          Style configurations are intended to update existing widget elements.
+          <br>
+          Some themes may not support style overrides.
+        </p>
+  
+        {{ widget.text_color | edit_color_field_raul: 'Text Color', '', 'value_or_default', 'half-width' }}
+
+        {{ widget.font_size | edit_text_field_raul: 'Font Size', '', 'value_or_default', 'half-width' }}
+  
+        {{ widget.background_color | edit_color_field_raul: 'Background Color', '', 'value_or_default', 'half-width' }}
+  
+        {{ widget.background_opacity | edit_number_field_raul: 'Background Opacity (0 To 1)', '', 'value_or_default', 'half-width', 0, 1 }}
+  
+        {{ widget.border_color | edit_color_field_raul: 'Border Color', '', 'value_or_default', 'half-width' }}
+  
+        {{ widget.border_width | edit_text_field_raul: 'Border Width (px, em)', '', 'value_or_default', 'half-width' }}
+  
+        {{ widget.border_radius | edit_text_field_raul: 'Border Radius (px, em, %)', '', 'value_or_default', 'half-width' }}
+  
+      </fieldset>
+  
+    {{ widget | end_tab_raul: true }}
+  
+  </form>
+  
